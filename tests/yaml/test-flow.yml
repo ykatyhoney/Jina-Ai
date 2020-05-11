@@ -1,0 +1,15 @@
+!Flow
+with:
+  sse_logger: false
+pods:
+  chunk_seg:
+    replicas: 3
+  wqncode1:
+    replicas: 2
+    needs: chunk_seg
+  encode2:
+    replicas: 2
+    needs: chunk_seg
+  joiner:
+    yaml_path: _merge
+    needs: [wqncode1, encode2]

@@ -1,0 +1,11 @@
+on:
+  ControlRequest:
+    - !ControlReqDriver {}
+  SearchRequest:
+    - !VectorSearchDriver {}
+  IndexRequest:
+    - !DocPruneDriver
+      with:
+        pruned: raw_bytes
+    - !VectorIndexDriver {}
+    - !ChunkPruneDriver {}

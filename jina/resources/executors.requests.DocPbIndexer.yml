@@ -1,0 +1,18 @@
+on:
+  ControlRequest:
+    - !ControlReqDriver {}
+  SearchRequest:
+    - !KVSearchDriver
+      with:
+        level: doc
+    - !TopKFilterDriver {}
+  IndexRequest:
+    - !PruneDriver
+      with:
+        level: doc
+        pruned:
+          - chunks
+          - raw_bytes
+    - !KVIndexDriver
+      with:
+        level: doc

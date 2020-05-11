@@ -1,0 +1,37 @@
+# FORMAT
+# Put your extra requirements here in the following format
+#
+# package[version]: tag1, tag2, ...
+#
+# AVAILABLE TAGS
+#
+# nlp, cv, ml, video, audio, numeric,  encode, index, prep, score, route, gpu, http
+#
+# REMARKS ON TAGS
+# 1. Try to reuse the existing tags if possible.
+#    If you intend to create a new tag, keep it alphabetical, short and general
+# 2. Package name itself is a tag already, so you dont need to tag it again.
+#    For example, 'flair>=0.4.1: flair' is redundant
+# 3. Tag order doesn't matter; case-sensitive; duplicated tag will be ignored
+# 4. Tag `all` is reserved for representing all packages
+
+scipy:                      numeric, index
+flask:                      http, sse, devel
+flask_cors:                 http, sse, devel
+nmslib:                     index
+docker:                     flow, devel
+torch:                      framework
+transformers:               nlp, encode
+flair:                      nlp, encode
+paddlepaddle:               framework, py37
+paddlehub:                  framework, py37
+Pillow:                     cv
+tensorflow>=2.0:            framework, py37
+torchvision:                framework
+onnx:                       framework, py37
+onnxruntime:                framework, py37
+annoy:                      index
+sklearn:                    framework
+plyvel:                     index
+jieba:                      nlp, preprocess
+lz4:                        optimization, devel, production, network
